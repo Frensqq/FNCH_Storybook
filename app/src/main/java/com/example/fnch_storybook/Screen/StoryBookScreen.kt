@@ -30,6 +30,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.fnch_storybook.Component.ColorsUiKit
 import com.example.fnch_storybook.R
+import com.example.uikit.Avatars.UniversalAvatar
 import com.example.uikit.Button.DestructiveSolidButton
 import com.example.uikit.Button.PrimaryButton
 import com.example.uikit.Button.SecondaryButton
@@ -41,7 +42,9 @@ import com.example.uikit.Cards.VacanciesMainCard
 import com.example.uikit.Input.Checkboxes
 import com.example.uikit.Input.InputFields
 import com.example.uikit.Input.Select
+import com.example.uikit.Navigation.CandidateProgress
 import com.example.uikit.Navigation.TopAppBar
+import com.example.uikit.Navigation.TopBarRef
 
 import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.FNCHTheme
@@ -346,6 +349,81 @@ fun StoryBookScreen(
             }
 
         }
-    }
 
+        item {
+            Column(
+                modifier = Modifier.padding(horizontal = Dimensions.DefaultSpacer)
+            ) {
+
+                Text(
+                    "Avatars",
+                    style = FNCHTheme.typography.displayLarge,
+                    color = FNCHTheme.colors.primary,
+                )
+
+                SpacerH(Dimensions.ExtraMediumPadding)
+
+                Row(
+                    horizontalArrangement = Arrangement
+                        .spacedBy(Dimensions.ExtraLargePadding)
+                ) {
+
+                    UniversalAvatar(
+                        painter = painterResource(com.example.uikit.R.drawable.avatar),
+                        state = true,
+                        text = "Photo"
+
+                    )
+
+                    UniversalAvatar(
+                        painter = null,
+                        "JD",
+                        true,
+                        text = "Initials"
+                    )
+
+
+
+                }
+
+                SpacerH(Dimensions.ExtraLargePadding)
+
+                Text(
+                    "Navigation & Feedback",
+                    style = FNCHTheme.typography.displayLarge,
+                    color = FNCHTheme.colors.primary,
+                )
+
+                SpacerH(Dimensions.MediumPadding)
+
+                TopAppBar(
+                    "HR Design System",
+                    painterResource(com.example.uikit.R.drawable.avatar)
+                ) {
+
+                }
+
+                SpacerH(Dimensions.ExtraMediumPadding)
+
+                TopBarRef(
+                    "HR Design System",
+                    {},
+                    {},
+                    state = false,
+                    painterResource(com.example.uikit.R.drawable.avatar)
+
+                )
+            }
+        }
+
+        item {
+            Column(
+                modifier = Modifier.padding(horizontal = Dimensions.DefaultSpacer)
+            ) {
+
+                CandidateProgress("Candidate Progress",2)
+
+            }
+        }
+    }
 }
