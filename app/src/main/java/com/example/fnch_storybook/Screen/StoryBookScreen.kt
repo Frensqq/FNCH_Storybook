@@ -394,7 +394,6 @@ fun StoryBookScreen(
                     {},
                     {},
                     state = false,
-                    painterResource(com.example.uikit.R.drawable.avatar)
 
                 )
             }
