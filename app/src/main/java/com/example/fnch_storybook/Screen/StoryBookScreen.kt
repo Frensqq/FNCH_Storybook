@@ -45,6 +45,7 @@ import com.example.uikit.Input.Select
 import com.example.uikit.Navigation.CandidateProgress
 import com.example.uikit.Navigation.TopAppBar
 import com.example.uikit.Navigation.TopBarRef
+import com.example.uikit.TextArea.TextArea
 
 import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.FNCHTheme
@@ -421,9 +422,29 @@ fun StoryBookScreen(
                 modifier = Modifier.padding(horizontal = Dimensions.DefaultSpacer)
             ) {
 
-                CandidateProgress("Candidate Progress",2)
+                CandidateProgress("Candidate Progress", 2)
+
+
+
+                Text(
+                    "Textarea",
+                    style = FNCHTheme.typography.displayLarge,
+                    color = FNCHTheme.colors.primary,
+                )
+
+                SpacerH(Dimensions.SmallSpacer)
+
+                TextArea(
+                    "",
+                    {},
+                    "Brief overview of the practical task if applicable..."
+                )
+
+                SpacerH(Dimensions.ExtraMediumPadding)
+
 
             }
+
         }
     }
 }
