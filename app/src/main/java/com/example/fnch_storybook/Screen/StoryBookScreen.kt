@@ -33,6 +33,12 @@ import com.example.fnch_storybook.R
 import com.example.uikit.Button.DestructiveSolidButton
 import com.example.uikit.Button.PrimaryButton
 import com.example.uikit.Button.SecondaryButton
+import com.example.uikit.Cards.ApplicantDetailsCard
+import com.example.uikit.Cards.ApplicantsCard
+import com.example.uikit.Cards.CandidateCard
+import com.example.uikit.Cards.VacanciesCard
+import com.example.uikit.Cards.VacanciesMainCard
+import com.example.uikit.Input.Checkboxes
 import com.example.uikit.Input.InputFields
 import com.example.uikit.Input.Select
 import com.example.uikit.Navigation.TopAppBar
@@ -264,13 +270,82 @@ fun StoryBookScreen(
 
                 Column(verticalArrangement = Arrangement.spacedBy(Dimensions.ExtraMediumPadding)) {
 
-                    Che
+                    Checkboxes({},true)
+                    Checkboxes({},false)
+                    Checkboxes({},false, true)
 
                 }
             }
         }
 
+        item {
+            Column(
+                modifier = Modifier.padding(horizontal = Dimensions.DefaultSpacer)
+            ) {
 
+                Text(
+                    "Cards",
+                    style = FNCHTheme.typography.displayLarge,
+                    color = FNCHTheme.colors.primary,
+                )
+
+                CandidateCard(
+                    "Elena Rodriguez",
+                    "Senior Product Designer",
+                    painter = painterResource(R.drawable.elenaprof)
+                )
+
+                SpacerH(Dimensions.ExtraMediumPadding)
+
+                VacanciesCard(
+                    "Senior Product Designer",
+                    "Product Team",
+                    "Full-time",
+                    "Active",
+                    countApplication = 24,
+                    120,160
+                    ) { }
+
+                SpacerH(Dimensions.ExtraMediumPadding)
+
+
+                VacanciesMainCard(
+                    "PD",
+                    "Senior Product Designer",
+                    "Product Team",
+                    "Full-time",
+                    24, 120,160
+                    ) {
+                }
+
+                SpacerH(Dimensions.ExtraMediumPadding)
+
+                ApplicantsCard(
+                    "Alexander",
+                    "Volkov",
+                    "Senior Product",
+                    "Интервью",
+                    "San Francisco, CA",
+                    "+1 415 555 0128",
+                    painter = painterResource(R.drawable.alexprew)
+                ) { }
+
+                SpacerH(Dimensions.ExtraMediumPadding)
+
+                ApplicantDetailsCard(
+                    "Julian",
+                    "Sterling",
+                    "Senior Frontend Developer",
+                    "Shortlisted",
+                    "New York, NY",
+                    "8 Years",
+                    "Immediate"
+                )
+
+
+            }
+
+        }
     }
 
 }
