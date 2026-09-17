@@ -19,6 +19,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.fnch_storybook.Component.ColorsUiKit
+import com.example.fnch_storybook.Component.TitleString
 import com.example.fnch_storybook.R
 import com.example.uikit.Avatars.UniversalAvatar
 import com.example.uikit.BottomBars.BottomNavBar
@@ -64,10 +65,9 @@ fun StoryBookScreen(
 
                 SpacerH(Dimensions.LargePadding)
 
-                Text("Typography & Colors",
-                    style = FNCHTheme.typography.displayLarge ,
-                    color = FNCHTheme.colors.primary,
-                    modifier = Modifier.padding(horizontal = 20.dp)
+
+                TitleString("Typography & Colors",
+                    Modifier.padding(horizontal = Dimensions.DefaultSpacer)
                 )
 
                 SpacerH(Dimensions.MediumPadding)
@@ -83,19 +83,19 @@ fun StoryBookScreen(
                     ColorsUiKit(color = FNCHTheme.colors.darkenWhite, nameColor = "darkenWhite"),
                 )
 
-                Column(Modifier.padding(horizontal = 20.dp)) {
+                Column(Modifier.padding(horizontal = Dimensions.DefaultSpacer)) {
                     FlowRow(
                         modifier = Modifier
                             .fillMaxWidth(),
                         maxItemsInEachRow = 4,
-                        horizontalArrangement = Arrangement.spacedBy(8.dp),
-                        verticalArrangement = Arrangement.spacedBy(8.dp)
+                        horizontalArrangement = Arrangement.spacedBy(Dimensions.SmallSpacer),
+                        verticalArrangement = Arrangement.spacedBy(Dimensions.SmallSpacer)
                     ) {
                         list.forEach { color ->
                             Column(
-                                modifier = Modifier.weight(1f),
+                                modifier = Modifier.weight(Dimensions.defaultWeight),
                                 horizontalAlignment = Alignment.CenterHorizontally,
-                                verticalArrangement = Arrangement.spacedBy(4.dp)
+                                verticalArrangement = Arrangement.spacedBy(Dimensions.ExtraSmallSpacer)
                             ) {
                                 Box(
                                     modifier = Modifier
@@ -135,9 +135,8 @@ fun StoryBookScreen(
 
                     SpacerH(Dimensions.ExtraSmallSpacer)
 
-                    Text("Buttons",
-                        style = FNCHTheme.typography.displayLarge ,
-                        color = FNCHTheme.colors.primary,
+                    TitleString(
+                        "Buttons"
                     )
 
                     SpacerH((Dimensions.ExtraMediumPadding))
@@ -188,10 +187,9 @@ fun StoryBookScreen(
         item {
 
             Column(modifier = Modifier.padding(horizontal = Dimensions.DefaultSpacer)) {
-                Text(
-                    "Input Fields",
-                    style = FNCHTheme.typography.displayLarge,
-                    color = FNCHTheme.colors.primary,
+
+                TitleString(
+                    "Input Fields"
                 )
 
                 SpacerH(Dimensions.ExtraMediumPadding)
@@ -253,10 +251,8 @@ fun StoryBookScreen(
                 modifier = Modifier.padding(horizontal = Dimensions.DefaultSpacer)
             ) {
 
-                Text(
-                    "Select & Checkboxes",
-                    style = FNCHTheme.typography.displayLarge,
-                    color = FNCHTheme.colors.primary,
+                TitleString(
+                    "Select & Checkboxes"
                 )
 
                 SpacerH(Dimensions.ExtraMediumPadding)
@@ -280,10 +276,8 @@ fun StoryBookScreen(
                 modifier = Modifier.padding(horizontal = Dimensions.DefaultSpacer)
             ) {
 
-                Text(
-                    "Cards",
-                    style = FNCHTheme.typography.displayLarge,
-                    color = FNCHTheme.colors.primary,
+                TitleString(
+                    "Cards"
                 )
 
                 CandidateCard(
@@ -349,10 +343,8 @@ fun StoryBookScreen(
                 modifier = Modifier.padding(horizontal = Dimensions.DefaultSpacer)
             ) {
 
-                Text(
-                    "Avatars",
-                    style = FNCHTheme.typography.displayLarge,
-                    color = FNCHTheme.colors.primary,
+                TitleString(
+                    "Avatars"
                 )
 
                 SpacerH(Dimensions.ExtraMediumPadding)
@@ -382,10 +374,8 @@ fun StoryBookScreen(
 
                 SpacerH(Dimensions.ExtraLargePadding)
 
-                Text(
-                    "Navigation & Feedback",
-                    style = FNCHTheme.typography.displayLarge,
-                    color = FNCHTheme.colors.primary,
+                TitleString(
+                    "Navigation & Feedback"
                 )
 
                 SpacerH(Dimensions.MediumPadding)
@@ -417,10 +407,8 @@ fun StoryBookScreen(
 
                 CandidateProgress("Candidate Progress", 2)
 
-                Text(
-                    "Textarea",
-                    style = FNCHTheme.typography.displayLarge,
-                    color = FNCHTheme.colors.primary,
+                TitleString(
+                    "Textarea"
                 )
 
                 SpacerH(Dimensions.SmallSpacer)
@@ -433,10 +421,8 @@ fun StoryBookScreen(
 
                 SpacerH(Dimensions.ExtraMediumPadding)
 
-                Text(
-                    "Snackbar",
-                    style = FNCHTheme.typography.displayLarge,
-                    color = FNCHTheme.colors.primary,
+                TitleString(
+                    "Snackbar"
                 )
 
                 SpacerH(Dimensions.ExtraMediumPadding)
@@ -445,10 +431,8 @@ fun StoryBookScreen(
 
                 SpacerH(Dimensions.ExtraMediumPadding)
 
-                Text(
-                    "BottomBars",
-                    style = FNCHTheme.typography.displayLarge,
-                    color = FNCHTheme.colors.primary,
+                TitleString(
+                    "BottomBars"
                 )
             }
 
