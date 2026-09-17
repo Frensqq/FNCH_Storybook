@@ -6,31 +6,24 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.foundation.lazy.staggeredgrid.LazyHorizontalStaggeredGrid
-import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
-import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.fnch_storybook.Component.ColorsUiKit
 import com.example.fnch_storybook.R
 import com.example.uikit.Avatars.UniversalAvatar
+import com.example.uikit.BottomBars.BottomNavBar
+import com.example.uikit.BottomBars.BottomNavBarShell
+import com.example.uikit.BottomSheet.BottomSheetData
 import com.example.uikit.Button.DestructiveSolidButton
 import com.example.uikit.Button.PrimaryButton
 import com.example.uikit.Button.SecondaryButton
@@ -45,8 +38,8 @@ import com.example.uikit.Input.Select
 import com.example.uikit.Navigation.CandidateProgress
 import com.example.uikit.Navigation.TopAppBar
 import com.example.uikit.Navigation.TopBarRef
+import com.example.uikit.Snackbar.Snackbar
 import com.example.uikit.TextArea.TextArea
-
 import com.example.uikit.UI.Dimensions
 import com.example.uikit.UI.FNCHTheme
 import com.example.uikit.UI.SpacerH
@@ -424,8 +417,6 @@ fun StoryBookScreen(
 
                 CandidateProgress("Candidate Progress", 2)
 
-
-
                 Text(
                     "Textarea",
                     style = FNCHTheme.typography.displayLarge,
@@ -442,9 +433,32 @@ fun StoryBookScreen(
 
                 SpacerH(Dimensions.ExtraMediumPadding)
 
+                Text(
+                    "Snackbar",
+                    style = FNCHTheme.typography.displayLarge,
+                    color = FNCHTheme.colors.primary,
+                )
 
+                SpacerH(Dimensions.ExtraMediumPadding)
+
+                Snackbar("Candidate card successfully removed from the board"){}
+
+                SpacerH(Dimensions.ExtraMediumPadding)
+
+                Text(
+                    "BottomBars",
+                    style = FNCHTheme.typography.displayLarge,
+                    color = FNCHTheme.colors.primary,
+                )
             }
 
+            SpacerH(Dimensions.ExtraMediumPadding)
+
+            BottomNavBarShell("Settings"){}
+
+            SpacerH(Dimensions.ExtraMediumPadding)
+
+            BottomNavBar({},{})
         }
     }
 }
